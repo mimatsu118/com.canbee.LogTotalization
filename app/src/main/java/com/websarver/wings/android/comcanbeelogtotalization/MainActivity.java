@@ -1,5 +1,6 @@
 package com.websarver.wings.android.comcanbeelogtotalization;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -36,9 +37,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
-        setSupportActionBar(binding.toolbar);
-
-        NavController navController_plus = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController_plus = Navigation.findNavController(this, R.id.ui.home.HomeFragment);
         appBarConfiguration = new AppBarConfiguration.Builder(navController_plus.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController_plus, appBarConfiguration);
 
@@ -50,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void listFragment_first(View view){
+        Intent intent = getIntent();
+        startActivity(intent);
     }
 
 }
